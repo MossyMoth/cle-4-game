@@ -1,19 +1,18 @@
 import { Actor, Engine, Vector, Color } from "excalibur";
-import { Resources, ResourceLoader } from "./resources.js";
-import { Fish } from "./fish.js";
+import { Resources, ResourceLoader } from "../js/resources.js";
+import { Taxi } from "../js/players/player1";
 
 export class Game extends Engine {
     constructor() {
-        super();
-        this.start(ResourceLoader).then(() => this.startGame());
+      super();
+      this.start(ResourceLoader).then(() => this.startGame());
     }
-
+  
     startGame() {
-        for (let i = 0; i < 15; i++) {
-            const fish = new Fish();
-            this.add(fish);
-        }
+      const taxi = new taxi();
+      this.add(Taxi);
     }
-}
-
-new Game();
+  }
+  
+  new Game();
+  
