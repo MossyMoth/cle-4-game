@@ -1,5 +1,5 @@
 import { ImageSource, Sound, Resource, Loader } from "excalibur";
-import taxiImage from "../assets/other-assets/ship.png";
+import taxiImage from "/assets/other-assets/ship.png";
 
 const Resources = {
     Taxi: new ImageSource(taxiImage)
