@@ -6,7 +6,7 @@ export class Taxi extends Actor {
     super();
   }
   onInitialize(engine) {
-    this.graphics.use(Resources.Car.toSprite());
+    this.graphics.use(Resources.Taxi.toSprite());
     this.pos = new Vector(400, 400);
     this.vel = new Vector(0, 0);
   }
