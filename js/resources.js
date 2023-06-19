@@ -1,8 +1,8 @@
 import { ImageSource, Sound, Resource, Loader } from "excalibur";
-import fishImage from "./fish.png";
+// import fishImage from "./fish.png";
 
 const Resources = {
-    Fish: new ImageSource(fishImage)
+    // Fish: new ImageSource(fishImage)
 };
 const ResourceLoader = new Loader([Resources.Fish]);
 
