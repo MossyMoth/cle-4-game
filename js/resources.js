@@ -4,8 +4,8 @@ import busImage from "/assets/other-assets/waterbus.png";
 
 const Resources = {
   Taxi: new ImageSource(taxiImage),
-  Bus: new ImageSource(busImage),
+  Waterbus: new ImageSource(busImage),
 };
-const ResourceLoader = new Loader([Resources.Taxi], [Resources.Bus]);
+const ResourceLoader = new Loader([Resources.Taxi], [Resources.Waterbus]);
 
 export { Resources, ResourceLoader };

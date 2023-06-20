@@ -15,12 +15,12 @@ export class Waterbus extends Actor {
     let speed = 60;
 
     // cursor keys is direction
-    if (engine.input.keyboard.isHeld(Input.Keys.D)) {
+    if (engine.input.keyboard.isHeld(Input.Keys.A)) {
       if (this.rotation <= (320 * Math.PI) / 180) {
         this.rotation += 0.02;
       }
     }
-    if (engine.input.keyboard.isHeld(Input.Keys.A)) {
+    if (engine.input.keyboard.isHeld(Input.Keys.D)) {
       if (this.rotation >= (220 * Math.PI) / 180) {
         this.rotation -= 0.02;
       }
