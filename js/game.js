@@ -7,7 +7,6 @@ export class Game extends Engine {
   constructor() {
     super();
     this.start(ResourceLoader).then(() => this.startGame());
-    const devtool = new DevTool(game);
   }
 
   startGame() {
