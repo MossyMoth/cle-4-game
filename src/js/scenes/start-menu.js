@@ -1,7 +1,8 @@
 import * as ex from "excalibur";
 import { Game } from "../game";
-//import level-0 from './level-0'
+import { ResourceLoader, Resources}  from "../resources.js";
 import { TutorialLevel } from "./level-0.js";
+
 
 
 export class StartMenu extends ex.Scene {
@@ -9,10 +10,20 @@ export class StartMenu extends ex.Scene {
         super();
     }
 
-    onInitialize() {
-        console.log("start menu");
-        // setup
+    onInitialize(engine) {
+        const Background = new ex.Actor({
+            x: 0,
+            y: 0,
+        });
+        Background.graphics.use(Resources.Background.toSprite());
+        this.add(Background);
+        console.log(Background);
+    
+        let camera = engine.currentScene.camera;
+        camera.strategy.lockToActor(Background);
+        this.camera.zoom = 1.5;
     }
+
 
     onPreUpdate(engine) {
 
@@ -25,3 +36,4 @@ export class StartMenu extends ex.Scene {
         }
     }
 }
+
