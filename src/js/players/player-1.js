@@ -2,13 +2,23 @@ import { Actor, Vector, Input } from "excalibur";
 import { Resources, ResourceLoader } from "/src/js/resources.js";
 
 export class Taxi extends Actor {
-  constructor() {
+
+  spawnPosX
+  spawnPosY
+  
+  constructor(spawnPosX, spawnPosY) {
     super();
-  }
-  onInitialize(engine) {
+    this._name = "taxi";
+    this.pos = new Vector(spawnPosX, spawnPosY);
     this.graphics.use(Resources.Taxi.toSprite());
-    this.pos = new Vector(400, 400);
+    this.collider.useBoxCollider(10, 21, Vector.Half, new Vector(0, 0)); 
+    this.useGraphicBounds = true;
+  }
+
+  onInitialize(engine) {
     this.rotation = (270 * Math.PI) / 180;
+    this.body.collisionType = CollisionType.Active;
+
   }
 
   onPreUpdate(engine) {
