@@ -2,6 +2,7 @@ import { Actor, Vector, Input } from "excalibur";
 import { Resources, ResourceLoader } from "/src/js/resources.js";
 
 export class Taxi extends Actor {
+
   spawnPosX
   spawnPosY
   
@@ -17,6 +18,7 @@ export class Taxi extends Actor {
   onInitialize(engine) {
     this.rotation = (270 * Math.PI) / 180;
     this.body.collisionType = CollisionType.Active;
+
   }
 
   onPreUpdate(engine) {
