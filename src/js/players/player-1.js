@@ -15,7 +15,7 @@ export class Taxi extends Actor {
     this.useGraphicBounds = true;
   }
 
-  onInitialize() {
+  onInitialize(engine) {
     this.body.collisionType = CollisionType.Active;
   }
 
