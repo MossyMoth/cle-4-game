@@ -8,10 +8,13 @@ export class Taxi extends Actor {
   
   constructor(spawnPosX, spawnPosY) {
     super();
+    this._name = "taxi";
     this.pos = new Vector(spawnPosX, spawnPosY);
     this.graphics.use(Resources.Taxi.toSprite());
+    this.collider.useBoxCollider(10, 21, Vector.Half, new Vector(0, 0)); 
     this.useGraphicBounds = true;
   }
+
   onInitialize() {
     this.body.collisionType = CollisionType.Active;
   }

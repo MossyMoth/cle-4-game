@@ -1,3 +1,4 @@
+import * as ex from "excalibur";
 import { Actor, Engine, Vector, Color } from "excalibur";
 import { TiledMapResource } from '@excaliburjs/plugin-tiled';
 import { Resources, ResourceLoader } from "./resources.js";
