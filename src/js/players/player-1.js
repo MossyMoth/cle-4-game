@@ -1,44 +1,29 @@
-import { Actor, Vector, Input, CollisionType } from "excalibur";
-import { Resources, ResourceLoader } from "../resources.js";
+import { Actor, Vector, Input } from "excalibur";
+import { Resources, ResourceLoader } from "/src/js/resources.js";
 
 export class Taxi extends Actor {
-  
-  spawnPosX
-  spawnPosY
-  
-  constructor(spawnPosX, spawnPosY) {
+  constructor() {
     super();
-    this.pos = new Vector(spawnPosX, spawnPosY);
-    this.graphics.use(Resources.Taxi.toSprite());
-    this.useGraphicBounds = true;
   }
-  onInitialize() {
-    this.body.collisionType = CollisionType.Active;
+  onInitialize(engine) {
+    this.graphics.use(Resources.Taxi.toSprite());
+    this.pos = new Vector(400, 400);
+    this.rotation = (270 * Math.PI) / 180;
   }
 
   onPreUpdate(engine) {
-    let speed = 0;
-
-    // UP = forward
-    if (
-      engine.input.keyboard.isHeld(Input.Keys.Up) ||
-      engine.input.keyboard.isHeld(Input.Keys.Up)
-    ) {
-      speed = -150;
-    }
+    let speed = 60;
 
     // cursor keys is direction
-    if (
-      engine.input.keyboard.isHeld(Input.Keys.D) ||
-      engine.input.keyboard.isHeld(Input.Keys.Right)
-    ) {
-      this.rotation += 0.05;
+    if (engine.input.keyboard.isHeld(Input.Keys.Right)) {
+      if (this.rotation <= (320 * Math.PI) / 180) {
+        this.rotation += 0.02;
+      }
     }
-    if (
-      engine.input.keyboard.isHeld(Input.Keys.A) ||
-      engine.input.keyboard.isHeld(Input.Keys.Left)
-    ) {
-      this.rotation -= 0.05;
+    if (engine.input.keyboard.isHeld(Input.Keys.Left)) {
+      if (this.rotation >= (220 * Math.PI) / 180) {
+        this.rotation -= 0.02;
+      }
     }
 
     // direction is the cosine/sine of the angle!
