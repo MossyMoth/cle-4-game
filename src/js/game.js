@@ -1,7 +1,7 @@
 import { Actor, Engine, Vector, Color } from "excalibur";
-import { Resources, ResourceLoader } from "/js/resources.js";
-import { Taxi } from "./players/player1";
-import { Waterbus } from "./players/player2.js";
+import { Resources, ResourceLoader } from "/src/js/resources.js";
+import { Taxi } from "./players/player-1";
+import { Waterbus } from "./players/player-2";
 
 export class Game extends Engine {
   constructor() {
