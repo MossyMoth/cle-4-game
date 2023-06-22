@@ -18,13 +18,6 @@ export class Game extends Engine {
         const startMenu = new StartMenu();
         this.addScene('startMenu', startMenu);
         this.goToScene('startMenu');
-
-        const taxi = new Taxi();
-        this.add(taxi);
-
-        const waterbus = new Waterbus();
-        this.add(waterbus);
-
     }
 }
 
