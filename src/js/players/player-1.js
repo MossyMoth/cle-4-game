@@ -3,6 +3,7 @@ import { Actor, Vector, Input } from "excalibur";
 import { Resources, ResourceLoader } from "/src/js/resources.js";
 
 export class Taxi extends Actor {
+
   spawnPosX
   spawnPosY
   
