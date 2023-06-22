@@ -1,3 +1,4 @@
+import * as ex from "excalibur";
 import { Actor, Vector, Input } from "excalibur";
 import { Resources, ResourceLoader } from "/src/js/resources.js";
 
