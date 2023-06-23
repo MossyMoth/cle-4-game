@@ -21,7 +21,7 @@ const Resources = {
     TestMap: new TiledMapResource(testMap),
     Background: new ImageSource(startBackground),
     Logo: new ImageSource(logo),
-    Start: new ImageSource(start)
+    Start: new ImageSource(start),
     //Obstacle Resources
     Buoy: new ImageSource(buoyImage),
     wharfLeft16: new ImageSource(wharfLeft16Image),
