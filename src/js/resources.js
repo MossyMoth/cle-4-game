@@ -4,12 +4,16 @@ import taxiImage from "../assets/other-assets/watertaxi.png";
 import testMap from "../assets/level-assets/TestMap.tmx";
 import busImage from "../assets/other-assets/waterbus.png";
 import startBackground from "../assets/other-assets/startBackground.jpg";
+import logo from "../assets/other-assets/Logo.png";
+import start from "../assets/other-assets/Press-Start.png";
 
 const Resources = {
     Taxi: new ImageSource(taxiImage),
     Waterbus: new ImageSource(busImage),
     TestMap: new TiledMapResource(testMap),
-    Background: new ImageSource(startBackground)
+    Background: new ImageSource(startBackground),
+    Logo: new ImageSource(logo),
+    Start: new ImageSource(start)
 };
 
 // met deze for loop hoef je niet alles handmatig in de loader te zetten
