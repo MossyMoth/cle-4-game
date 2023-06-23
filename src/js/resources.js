@@ -4,6 +4,8 @@ import taxiImage from "../assets/other-assets/watertaxi.png";
 import testMap from "../assets/level-assets/TestMap.tmx";
 import busImage from "../assets/other-assets/waterbus.png";
 import startBackground from "../assets/other-assets/startBackground.jpg";
+import logo from "../assets/other-assets/Logo.png";
+import start from "../assets/other-assets/Press-Start.png";
 //Obstacle Resources
 import buoyImage from "../assets/level-assets/obstacles/easy/boei.png";
 import wharfLeft16Image from "../assets/level-assets/obstacles/easy/kade-links-16.png";
@@ -18,6 +20,8 @@ const Resources = {
     Waterbus: new ImageSource(busImage),
     TestMap: new TiledMapResource(testMap),
     Background: new ImageSource(startBackground),
+    Logo: new ImageSource(logo),
+    Start: new ImageSource(start)
     //Obstacle Resources
     Buoy: new ImageSource(buoyImage),
     wharfLeft16: new ImageSource(wharfLeft16Image),
