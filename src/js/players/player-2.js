@@ -10,6 +10,7 @@ export class Waterbus extends Actor {
     this.graphics.use(Resources.Waterbus.toSprite());
     this.pos = new Vector(200, 400);
     this.rotation = (270 * Math.PI) / 180;
+    this.z = 2;
   }
 
   onPreUpdate(engine) {

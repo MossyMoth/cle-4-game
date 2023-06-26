@@ -4,16 +4,17 @@ import { Resources, ResourceLoader } from "/src/js/resources.js";
 
 export class Taxi extends Actor {
 
-  spawnPosX
-  spawnPosY
+  p1spawnPosX
+  p1spawnPosY
   
-  constructor(spawnPosX, spawnPosY) {
+  constructor(p1spawnPosX, p1spawnPosY) {
     super();
     this._name = "taxi";
-    this.pos = new Vector(spawnPosX, spawnPosY);
+    this.pos = new Vector(p1spawnPosX, p1spawnPosY);
     this.graphics.use(Resources.Taxi.toSprite());
-    this.collider.useBoxCollider(10, 21, Vector.Half, new Vector(0, 0)); 
+    this.collider.useBoxCollider(21, 10, Vector.Half, new Vector(0, 0)); 
     this.useGraphicBounds = true;
+    this.z = 2;
   }
 
   onInitialize(engine) {
