@@ -15,7 +15,6 @@ export class StartMenu extends ex.Scene {
     });
     Background.graphics.use(Resources.Background.toSprite());
     this.add(Background);
-    console.log(Background);
 
     const Logo = new ex.Actor({
       x: 0,

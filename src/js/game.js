@@ -4,9 +4,6 @@ import { TiledMapResource } from '@excaliburjs/plugin-tiled';
 import { Resources, ResourceLoader } from "./resources.js";
 import { DevTool } from "@excaliburjs/dev-tools";
 import { StartMenu } from "./scenes/start-menu.js";
-import { TutorialLevel } from "./scenes/level-0.js";
-import { Taxi } from "./players/player-1";
-import { Waterbus } from "./players/player-2";
 
 export class Game extends Engine {
     constructor() {

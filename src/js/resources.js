@@ -1,7 +1,7 @@
 import { ImageSource, Sound, Resource, Loader, TileMap, Color } from "excalibur";
 import { TiledMapResource } from '@excaliburjs/plugin-tiled';
 import taxiImage from "../assets/other-assets/watertaxi.png";
-import testMap from "../assets/level-assets/TestMap.tmx";
+import Level0Map from "../assets/level-assets/Level-0-Map.tmx";
 import busImage from "../assets/other-assets/waterbus.png";
 import startBackground from "../assets/other-assets/startBackground.jpg";
 import logo from "../assets/other-assets/Logo.png";
@@ -18,7 +18,7 @@ import wharfRight80Image from "../assets/level-assets/obstacles/easy/kade-rechts
 const Resources = {
     Taxi: new ImageSource(taxiImage),
     Waterbus: new ImageSource(busImage),
-    TestMap: new TiledMapResource(testMap),
+    TutorialMap: new TiledMapResource(Level0Map),
     Background: new ImageSource(startBackground),
     Logo: new ImageSource(logo),
     Start: new ImageSource(start),
@@ -40,5 +40,5 @@ for (const key in Resources) {
 
 
 const ResourceLoader = new Loader(resourceArray);
-ResourceLoader.suppressPlayButton = true
+ResourceLoader.suppressPlayButton = true;
 export { Resources, ResourceLoader };
