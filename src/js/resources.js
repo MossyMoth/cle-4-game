@@ -5,13 +5,15 @@ import testMap from "../assets/level-assets/TestMap.tmx";
 import startBackground from "../assets/other-assets/startBackground.jpg";
 import logo from "../assets/other-assets/Logo.png";
 import start from "../assets/other-assets/Press-Start.png";
+import reloadButton from "../assets/other-assets/retrynobg.png";
 
 const Resources = {
     Taxi: new ImageSource(taxiImage),
     TestMap: new TiledMapResource(testMap),
     Background: new ImageSource(startBackground),
     Logo: new ImageSource(logo),
-    Start: new ImageSource(start)
+    Start: new ImageSource(start),
+    Reload: new ImageSource(reloadButton)
 };
 
 // met deze for loop hoef je niet alles handmatig in de loader te zetten
