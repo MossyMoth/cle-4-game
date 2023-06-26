@@ -5,7 +5,8 @@ import Level0Map from "../assets/level-assets/Level-0-Map.tmx";
 import busImage from "../assets/other-assets/waterbus.png";
 import startBackground from "../assets/other-assets/startBackground.jpg";
 import logo from "../assets/other-assets/Logo.png";
-import start from "../assets/other-assets/Press-Start.png";
+import reloadButton from "../assets/other-assets/retrynobg.png";
+
 //Obstacle Resources
 import buoyImage from "../assets/level-assets/obstacles/easy/boei.png";
 import wharfLeft16Image from "../assets/level-assets/obstacles/easy/kade-links-16.png";
@@ -15,6 +16,7 @@ import wharfRight16Image from "../assets/level-assets/obstacles/easy/kade-rechts
 import wharfRight48Image from "../assets/level-assets/obstacles/easy/kade-rechts-48.png";
 import wharfRight80Image from "../assets/level-assets/obstacles/easy/kade-rechts-80.png";
 
+
 const Resources = {
     Taxi: new ImageSource(taxiImage),
     Waterbus: new ImageSource(busImage),
@@ -22,6 +24,7 @@ const Resources = {
     Background: new ImageSource(startBackground),
     Logo: new ImageSource(logo),
     Start: new ImageSource(start),
+    Reload: new ImageSource(reloadButton),
     //Obstacle Resources
     Buoy: new ImageSource(buoyImage),
     wharfLeft16: new ImageSource(wharfLeft16Image),
@@ -40,5 +43,5 @@ for (const key in Resources) {
 
 
 const ResourceLoader = new Loader(resourceArray);
-ResourceLoader.suppressPlayButton = true;
+ResourceLoader.suppressPlayButton = true
 export { Resources, ResourceLoader };

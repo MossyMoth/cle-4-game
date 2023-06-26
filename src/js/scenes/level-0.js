@@ -2,6 +2,7 @@ import * as ex from "excalibur";
 import { TiledMapResource } from "@excaliburjs/plugin-tiled";
 import { Taxi } from "../players/player-1";
 import { Resources, ResourceLoader } from "../resources.js";
+import { deathScreen } from "../scenes/death-screen.js";
 
 
 export class TutorialLevel extends ex.Scene {
@@ -50,10 +51,22 @@ export class TutorialLevel extends ex.Scene {
         cam.pos.x = p1spawnPosX;
         cam.strategy.lockToActorAxis(taxi, ex.Axis.Y);
         this.camera.zoom = 1.5;
-
     }
 
 
+        if (engine.input.keyboard.wasPressed(ex.Input.Keys.Space)) {
+            console.log("tutorial input");
+    
+        }
+
+        if (engine.input.keyboard.wasPressed(ex.Input.Keys  .Q)) {
+            console.log("input");
+      
+            const deathscreen = new deathScreen();
+            engine.addScene("deathScene", deathscreen);
+            engine.goToScene("deathScene");
+          }
+    }
 }
 
 
