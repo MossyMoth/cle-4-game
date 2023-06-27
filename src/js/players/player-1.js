@@ -20,6 +20,10 @@ export class Taxi extends Actor {
   onInitialize(engine) {
     this.rotation = (270 * Math.PI) / 180;
     this.body.collisionType = ex.CollisionType.Active;
+
+    this.on('collisionStart', (event) => {
+      
+  })
   }
 
   onPreUpdate(engine) {
