@@ -2,7 +2,7 @@ import * as ex from "excalibur";
 import { TiledMapResource } from "@excaliburjs/plugin-tiled";
 import { Taxi } from "../players/player-1";
 import { Resources, ResourceLoader } from "../resources.js";
-//import level-0 from './level-0'
+import { deathScreen } from "../scenes/death-screen.js";
 
 
 export class TutorialLevel extends ex.Scene {
@@ -14,81 +14,59 @@ export class TutorialLevel extends ex.Scene {
     onInitialize(engine) {
         console.log("tutorial level");
         console.log(this);
-        Resources.TestMap.addTiledMapToScene(engine.currentScene);
+        Resources.TutorialMap.addTiledMapToScene(engine.currentScene);
 
-        let tiledMapData = Resources.TestMap.data.getExcaliburObjects();
-        let spawnPos = tiledMapData[0]["objects"][0];
-        let spawnPosX = spawnPos.x;
-        let spawnPosY = spawnPos.y;
-
-
-        const Background = new ex.Actor({
-            x: 0,
-            y: 0,
-            
-        })
-
-
+        let tiledMapData = Resources.TutorialMap.data.getExcaliburObjects();
+        let player1spawnPos = tiledMapData[0]["objects"][0];
+        let p1spawnPosX = player1spawnPos.x;
+        let p1spawnPosY = player1spawnPos.y;
         
         for (let obj in tiledMapData[0]["objects"]) {
+
+            if (obj <= 1) {//skips taxi and waterbus as objects
+                continue;
+            }
+
             let ObjPos = ex.vec(tiledMapData[0]["objects"][obj].x, tiledMapData[0]["objects"][obj].y);
-            console.log(tiledMapData[0]["objects"][obj].name);
-            this.TargetMarker = new ex.Actor({
+            this.NewObstacle = new ex.Actor({
                 pos: ObjPos,
-                collisionType: ex.CollisionType.Fixed,
-                width: 48,
-                height: 13,
+                anchor: ex.vec(0, 1),
+                collisionType: ex.CollisionType.Passive,
+                width: tiledMapData[0]["objects"][obj]["properties"][1].value,
+                height: tiledMapData[0]["objects"][obj]["properties"][0].value
             })
-            console.log(this.TargetMarker);
-            this.TargetMarker.on('collisionstart', (ev) => {
+            this.NewObstacle.on('collisionstart', (ev) => {//checks if Taxi actor collides based on _name of Taxi
                 if (ev.other._name === 'taxi') {
-                    console.log("boop")
+                    // console.log("boop")
                 }
             })
-            this.add(this.TargetMarker)
+            this.add(this.NewObstacle);
         }
 
-        const taxi = new Taxi(spawnPosX, spawnPosY);
+
+        const taxi = new Taxi(p1spawnPosX, p1spawnPosY);
         this.add(taxi);
 
         let cam = this.camera;
-        cam.strategy.lockToActor(taxi);
+        cam.pos.x = p1spawnPosX;
+        cam.strategy.lockToActorAxis(taxi, ex.Axis.Y);
         this.camera.zoom = 1.5;
-
     }
 
-    onPreUpdate(engine) {
 
         if (engine.input.keyboard.wasPressed(ex.Input.Keys.Space)) {
             console.log("tutorial input");
+    
         }
+
+        if (engine.input.keyboard.wasPressed(ex.Input.Keys  .Q)) {
+            console.log("input");
+      
+            const deathscreen = new deathScreen();
+            engine.addScene("deathScene", deathscreen);
+            engine.goToScene("deathScene");
+          }
     }
 }
 
 
-// for (let obj in tiledMapData[0]["objects"]) {
-//     let ObjPos = ex.vec(tiledMapData[0]["objects"][obj].x, tiledMapData[0]["objects"][obj].y)
-//     switch (tiledMapData[0]["objects"][obj].name) {
-//         case 'Finish':
-//             this.TargetMarker = new Actor({
-//                 pos: ObjPos,
-//                 collisionType: CollisionType.Passive,
-//                 width: 25,
-//                 height: 30,
-//             })
-//             // this.MarkerSprite = Sprite.from(Resources.Marker)
-//             // this.TargetMarker.graphics.use(this.MarkerSprite)
-//             // this.TargetMarker.on('collisionstart', (ev) => {
-//             //     if (ev.other.name === 'player') {
-//             //         this.diaToNextScene()
-//             //     }
-//             // })
-//             // this.add(this.TargetMarker)
-//             // console.log("Made Marker")
-//             // break;
-//         // case 'DirectionIndic':
-//         //     break;
-//         // case 'DirectionIndic2':
-//         //     break;
-//     }
-// }
