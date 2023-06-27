@@ -9,11 +9,13 @@ export class StartMenu extends ex.Scene {
   }
 
   onInitialize(engine) {
+
     const Background = new ex.Actor({
       x: 0,
       y: 0,
     });
     Background.graphics.use(Resources.Background.toSprite());
+    Background.scale = new ex.Vector(4.5, 4.5);
     this.add(Background);
 
     const Logo = new ex.Actor({

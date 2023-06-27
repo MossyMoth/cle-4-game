@@ -3,8 +3,9 @@ import { TiledMapResource } from '@excaliburjs/plugin-tiled';
 import taxiImage from "../assets/other-assets/watertaxi.png";
 import Level0Map from "../assets/level-assets/Level-0-Map.tmx";
 import busImage from "../assets/other-assets/waterbus.png";
-import startBackground from "../assets/other-assets/startBackground.jpg";
+import startBackground from "../assets/other-assets/start-scherm.png";
 import logo from "../assets/other-assets/Logo.png";
+import start from "../assets/other-assets/Press-Start.png";
 import reloadButton from "../assets/other-assets/retrynobg.png";
 
 //Obstacle Resources

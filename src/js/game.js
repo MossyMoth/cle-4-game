@@ -12,6 +12,7 @@ export class Game extends Engine {
     }
 
     startGame() {
+        this.winner = "empty";
         const startMenu = new StartMenu();
         this.addScene('startMenu', startMenu);
         this.goToScene('startMenu');
