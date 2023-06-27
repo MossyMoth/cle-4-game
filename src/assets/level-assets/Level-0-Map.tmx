@@ -190,12 +190,14 @@
   </object>
   <object id="7" name="Buoy" gid="1" x="136" y="990" width="13" height="13">
    <properties>
+    <property name="_name" value="Buoy"/>
     <property name="height" type="int" value="11"/>
     <property name="width" type="int" value="11"/>
    </properties>
   </object>
   <object id="8" name="Buoy" gid="1" x="88.3333" y="1045.33" width="13" height="13">
    <properties>
+    <property name="_name" value="Buoy"/>
     <property name="height" type="int" value="11"/>
     <property name="width" type="int" value="11"/>
    </properties>
