@@ -9,6 +9,7 @@ export class StartMenu extends ex.Scene {
   }
 
   onInitialize(engine) {
+
     const Background = new ex.Actor({
       x: 0,
       y: 0,

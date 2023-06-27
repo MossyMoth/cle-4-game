@@ -21,8 +21,8 @@ export class Taxi extends Actor {
     this.rotation = (270 * Math.PI) / 180;
     this.body.collisionType = ex.CollisionType.Active;
     this.healthAmount = 3
-    this.on('collisionStart', (event) => {
-      this.onHit(event);
+    this.on('collisionStart', (ev) => {
+      this.onHit(ev, engine);
   })
 
   }
@@ -52,22 +52,27 @@ export class Taxi extends Actor {
 
     this.vel = direction;
   }
-  onHit(ev) {
-    console.log(ev);
-    if (ev.other.name = 'Buoy'){
+  
+  onHit(ev, engine) {
+    console.log("blabla");
+    console.log(ev)
+    
+    if (ev.other._name = 'Buoy'){
       console.log('You hit a buoy')
-      ev.other.kill;
+      ev.other.kill();
     }
     console.log("You hit Something!")
     if (this.healthAmount === 1) {
-        winner = 'player 2'
-        this.game.goToScene('death-screen')
+        engine.winner = 'player 2';
+        engine.goToScene('deathScene')
     }
     if (this.healthAmount === 2) {
+        ev.other.kill();
         this.healthAmount = 1
     }
     if (this.healthAmount === 3) {
-
+        
+        ev.other.kill();
         this.healthAmount = 2
     }
     console.log(this.healthAmount)

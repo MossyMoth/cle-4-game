@@ -26,14 +26,15 @@ export class TutorialLevel extends ex.Scene {
             if (obj <= 1) {//skips taxi and waterbus as objects
                 continue;
             }
-
+            
             let ObjPos = ex.vec(tiledMapData[0]["objects"][obj].x, tiledMapData[0]["objects"][obj].y);
             this.NewObstacle = new ex.Actor({
                 pos: ObjPos,
                 anchor: ex.vec(0, 1),
                 collisionType: ex.CollisionType.Passive,
                 width: tiledMapData[0]["objects"][obj]["properties"][1].value,
-                height: tiledMapData[0]["objects"][obj]["properties"][0].value
+                height: tiledMapData[0]["objects"][obj]["properties"][0].value,
+                name: tiledMapData[0]["objects"][obj]["name"]
             })
             this.NewObstacle.on('collisionstart', (ev) => {//checks if Taxi actor collides based on _name of Taxi
                 if (ev.other._name === 'taxi') {
@@ -53,6 +54,8 @@ export class TutorialLevel extends ex.Scene {
         this.camera.zoom = 1.5;
     
 
+        const deathscreen = new deathScreen();
+        engine.addScene("deathScene", deathscreen);
 
         if (engine.input.keyboard.wasPressed(ex.Input.Keys.Space)) {
             console.log("tutorial input");
