@@ -18,21 +18,21 @@ export class StartMenu extends ex.Scene {
     Background.scale = new ex.Vector(4.5, 4.5);
     this.add(Background);
 
-    const Logo = new ex.Actor({
-      x: 0,
-      y: -40,
-    });
-    Logo.graphics.use(Resources.Logo.toSprite());
-    Logo.scale = new ex.Vector(4.0, 4.0);
-    this.add(Logo);
+    // const Logo = new ex.Actor({
+    //   x: 0,
+    //   y: -40,
+    // });
+    // Logo.graphics.use(Resources.Logo.toSprite());
+    // Logo.scale = new ex.Vector(4.0, 4.0);
+    // this.add(Logo);
 
-    const Start = new ex.Actor({
-        x: 0,
-        y: 80,
-      });
-      Start.graphics.use(Resources.Start.toSprite());
-      Start.scale = new ex.Vector(4.0, 4.0);
-      this.add(Start);
+    // const Start = new ex.Actor({
+    //     x: 0,
+    //     y: 80,
+    //   });
+    //   Start.graphics.use(Resources.Start.toSprite());
+    //   Start.scale = new ex.Vector(4.0, 4.0);
+    //   this.add(Start);
 
     let camera = engine.currentScene.camera;
     camera.strategy.lockToActor(Background);
