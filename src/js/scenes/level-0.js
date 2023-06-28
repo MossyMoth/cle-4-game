@@ -56,13 +56,13 @@ export class TutorialLevel extends ex.Scene {
         const deathscreen = new deathScreen();
         engine.addScene("deathScene", deathscreen);
 
-        if (engine.input.keyboard.wasPressed(ex.Input.Keys  .Q)) {
-            console.log("input");
+        // if (engine.input.keyboard.wasPressed(ex.Input.Keys  .Q)) {
+        //     console.log("input");
       
-            const deathscreen = new deathScreen();
-            engine.addScene("deathScene", deathscreen);
-            engine.goToScene("deathScene");
-          }
+        //     const deathscreen = new deathScreen();
+        //     engine.addScene("deathScene", deathscreen);
+        //     engine.goToScene("deathScene");
+        //   }
     }
 }
 
